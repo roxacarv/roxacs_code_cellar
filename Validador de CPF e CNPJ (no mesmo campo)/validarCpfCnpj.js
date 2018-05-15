@@ -1,13 +1,13 @@
 function cpfCnpjMask(t) {
     var i = t.value.length;
     var mask = "";
-    if(i < 14) {
-        mask = "###.###.###-##";
-    } else {
-        mask = "##.###.###/####-##";
+    if(i < 14) { //se o tamanho do input for menor que 14 então é um CPF
+        mask = "###.###.###-##"; //aplica a máscara de CPF
+    } else { //caso contrário é um CNP
+        mask = "##.###.###/####-##"; //aplica a máscara de CNPJ
     }
      
-    if(i == 15) {
+    if(i == 15) { //assim que se percebe que é um CNPJ, pega o input atual e reformata como CNPJ
         var k = t.value.replace(/\D/g, '');
         t.value = k.substring(0, 2) + "." + k.substring(2, 5) + "." + k.substring(5, 8) + "/" + k.substring(8, 12);
     }
@@ -18,27 +18,28 @@ function cpfCnpjMask(t) {
         t.value += text.substring(0, 1);
     }
     if(i == 18) {
-        validateCnpj(t);
+        validateCnpj(t); //se for CPF valida
     } else if(i == 14) {
-        validateCpf(t);
+        validateCpf(t); //se for CNPJ valida
     }
     
 }
 
 // Função para validar o CNPJ
-function validateCnpj(t) {
+function validateCnpj(t) { //t = o objeto do HTML com o valor do input
     
-    var cnpjNumber = t.value.replace(/\D/g, '');
+    var cnpjNumber = t.value.replace(/\D/g, ''); //separa os dígitos dos símbolos especiais da formatação
     var firstTwelveDigits = cnpjNumber.substring(0, 12);
     var firstThirteenDigits = cnpjNumber.substring(0, 13);
     var firstDigit = cnpjNumber.substring(12, 13);
     var secondDigit = cnpjNumber.substring(13, 14);
-    var firstVerifiers = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+    var firstVerifiers = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]; //define os números do algoritmo de validação
     var secondVerifiers = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
     
     var validateFirstDigit = 0;
     var validateSecondDigit = 0;
     
+    //aplicação do algoritmo
     for(var i = 0; i < 12; i++) {
         validateFirstDigit += firstTwelveDigits.charAt(i) * firstVerifiers[i];
     }
@@ -62,11 +63,13 @@ function validateCnpj(t) {
     } else {
         validateSecondDigit = 11 - validateSecondDigit;
     }
+    //final do algoritmo
     
+    //retorna se o CPNJ é válido ou não
     if(validateFirstDigit == firstDigit && validateSecondDigit == secondDigit) {
-        console.log("CNPJ valido");
+        console.log("CNPJ válido");
     } else {
-        console.log("CNPJ invalido");
+        console.log("CNPJ inválido");
     }
     
     
@@ -84,6 +87,7 @@ function validateCpf(t) {
     var validateFirstDigit = 0;
     var validateSecondDigit = 0;
     
+    //algoritmo de cpf
     for(var i = 0; i < 9; i++) {
         validateFirstDigit += firstNineDigits.charAt(i) * ((firstNineDigits.length + 1) - i);
     }
@@ -103,6 +107,7 @@ function validateCpf(t) {
     if(validateSecondDigit == 10) {
         validateSecondDigit = 0;
     }
+    //final do algoritmo
     
     if(validateFirstDigit == firstDigit && validateSecondDigit == secondDigit) {
         console.log("CPF valido");
