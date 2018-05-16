@@ -53,7 +53,7 @@ function validateCnpj(t) { //t = o objeto do HTML com o valor do input
     }
     
     for(var j = 0; j < 13; j++) {
-        validateSecondDigit += firstThirteenDigits.charAt(i) * secondVerifiers[i];
+        validateSecondDigit += firstThirteenDigits.charAt(j) * secondVerifiers[j];
     }
     
     validateSecondDigit = validateSecondDigit % 11;
