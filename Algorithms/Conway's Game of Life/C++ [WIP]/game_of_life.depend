@@ -4,9 +4,10 @@
 
 1532221950 c:\users\xavie\documents\aoc\game_of_life\include\player.h
 
-1532573326 source:c:\users\xavie\documents\aoc\game_of_life\main.cpp
+1532904026 source:c:\users\xavie\documents\aoc\game_of_life\main.cpp
 	<iostream>
 	<random>
 	<time.h>
 	<windows.h>
+	<cstdio>
 

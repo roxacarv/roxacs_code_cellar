@@ -2,6 +2,7 @@
 #include <random>
 #include <time.h>
 #include <windows.h>
+#include <cstdio>
 
 #define ROW 20
 #define COL 20
@@ -148,18 +149,6 @@ Cell ** create_grid(size_t row, size_t col)
             new_grid[i][j].set_state(0);
         }
 
-    new_grid[3][3].set_state(1);
-    new_grid[2][3].set_state(1);
-    new_grid[4][3].set_state(1);
-
-    new_grid[10][10].set_state(1);
-    new_grid[9][10].set_state(1);
-    new_grid[11][10].set_state(1);
-    new_grid[11][12].set_state(1);
-    new_grid[9][11].set_state(1);
-
-    new_grid[18][18].set_state(1);
-
     set_new_neighborhood(new_grid);
 
     return new_grid;
@@ -172,21 +161,42 @@ void free_grid(Cell ** grid, size_t row)
     delete[] grid;
 }
 
+int basic_interface(Cell ** grid)
+{
+    int generations;
+    cout << "How many cells do you want to add: ";
+    int h;
+    scanf("%d", &h);
+    int k = 0;
+    while(k < h)
+    {
+        cout << "Input the row and column you want to position your cell: ";
+        int X, Y;
+        scanf("%d %d", &X, &Y);
+        grid[X][Y].set_state(1);
+        k++;
+    }
+    set_new_neighborhood(grid);
+    cout << "How many generation do you wish to see evolving: ";
+    scanf("%d", &generations);
+    return generations;
+}
+
 int main()
 {
-    char in;
-    cin >> &in;
     Cell ** grid = create_grid(ROW, COL);
+    int generations = basic_interface(grid);
     int n = 0;
-    while(n < 20)
+    while(n < generations)
     {
-        Sleep(800);
+        Sleep(1000);
         rules_set(grid);
         print_grid(grid, ROW, COL);
         n++;
     }
     free_grid(grid, ROW);
     char out;
+    cout << "Press enter to leave the program."
     cin >> &out;
     return 0;
 }
