@@ -5,7 +5,7 @@ Sometimes there'll be re-usage of the same algorithm to show examples in how usi
 
 Within time I'll be updating, correcting bugs and improving the codes as necessary.
 
-Already finished codes;
+**Already finished codes;**
 
 * BubbleSort (Finished) - Implemented in Python, C++ and C#
 * Conway's Game of Life (WIP) - Implementing in C++
@@ -16,7 +16,7 @@ Already finished codes;
 * Remove Specific Characters from String (Finished) - Implemented in C++
 * Validador de CPF/CNPJ (Terminado) - Implementado em JavaScript e C++
 
-Next (planned) algorithms and projects to be implemented;
+**Next (planned) algorithms and projects to be implemented;**
 
 * Binary Tree
 * Red-Black Tree
