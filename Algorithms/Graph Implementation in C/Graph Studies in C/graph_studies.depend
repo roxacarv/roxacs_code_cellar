@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1533443199 source:c:\users\xavie\documents\aoc\graph_studies\main.c
+	<stdio.h>
+	<stdlib.h>
+
