@@ -8,7 +8,7 @@ Within time I'll be updating, correcting bugs and improving the codes as necessa
 **Already finished codes;**
 
 * BubbleSort (Finished) - Implemented in Python, C++ and C#
-* Conway's Game of Life (WIP) - Implementing in C++
+* Conway's Game of Life (Finished) - Implemented in C++
 * Exponential Calculator (Finished) - Implemented in Python and C++
 * Find All Occurences of a Character Inside a String (Finished) - Implemented in C++
 * Graph Implementation (WIP) - Implementing in C { directed and undirected }
