@@ -4,10 +4,7 @@
 #include <windows.h>
 #include <cstdio>
 
-#define ROW 20
-#define COL 20
-
-using namespace std;
+enum sizes { ROW = 20, COL = 20 };
 
 void cls(void)
 {
@@ -70,8 +67,8 @@ void print_grid(Cell ** grid, size_t row, size_t col)
     cls();
     for(unsigned int i = 0; i < row; i++) {
         for(unsigned int j = 0; j < col; j++)
-            cout << grid[i][j].get_pixel();
-        cout << "" << endl;
+            std::cout << grid[i][j].get_pixel();
+        std::cout << "" << std::endl;
     }
 }
 
@@ -164,20 +161,20 @@ void free_grid(Cell ** grid, size_t row)
 int basic_interface(Cell ** grid)
 {
     int generations;
-    cout << "How many cells do you want to add: ";
+    std::cout << "How many cells do you want to add: ";
     int h;
     scanf("%d", &h);
     int k = 0;
     while(k < h)
     {
-        cout << "Input the row and column you want to position your cell: ";
+        std::cout << "Input the row and column you want to position your cell: ";
         int X, Y;
         scanf("%d %d", &X, &Y);
         grid[X][Y].set_state(1);
         k++;
     }
     set_new_neighborhood(grid);
-    cout << "How many generation do you wish to see evolving: ";
+    std::cout << "How many generation do you wish to see evolving: ";
     scanf("%d", &generations);
     return generations;
 }
@@ -196,7 +193,7 @@ int main()
     }
     free_grid(grid, ROW);
     char out;
-    cout << "Press enter to leave the program."
-    cin >> &out;
+    std::cout << "Press enter to leave the program.";
+    std::cin >> &out;
     return 0;
 }
