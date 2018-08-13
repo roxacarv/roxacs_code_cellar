@@ -15,12 +15,12 @@ Within time I'll be updating, correcting bugs and improving the codes as necessa
 * Input Mask for HTML (Finished) - Implemented in JavaScript
 * Remove Specific Characters from String (Finished) - Implemented in C++
 * Validador de CPF/CNPJ (Terminado) - Implementado em JavaScript e C++
+* Binary Tree (WIP) - Implementing in C
 
 **Next (planned) algorithms and projects to be implemented;**
 
-* Binary Tree
 * Red-Black Tree
-* Linked List
+* Linked List (NEXT ON LINE)
 * Hash Table
 * Consuming a WebService in Python
 * Snake Game (Console)
