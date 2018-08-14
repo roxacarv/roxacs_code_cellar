@@ -16,7 +16,9 @@ typedef struct BinaryTreeT {
 
 struct BinaryTreeT * create_tree(char * name);
 struct BinaryTreeT * add_node(BinaryTree * binaryTree, int data);
-void print_tree(BinaryTree * binaryTree);
+void print_post_order(Node * current);
+void print_in_order(Node * current);
+void print_pre_order(Node * current);
 
 struct BinaryTreeT * create_tree(char * name)
 {
