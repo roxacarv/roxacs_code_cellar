@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1534204239 source:c:\users\xavie\documents\aoc\binarytree\main.c
+	<stdio.h>
+	<stdlib.h>
+
