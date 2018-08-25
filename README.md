@@ -16,6 +16,7 @@ Within time I'll be updating, correcting bugs and improving the codes as necessa
 * Remove Specific Characters from String (Finished) - Implemented in C++
 * Validador de CPF/CNPJ (Terminado) - Implementado em JavaScript e C++
 * Binary Tree (WIP) - Implementing in C
+* Number Game (Finished) - Implemented in C
 
 **Next (planned) algorithms and projects to be implemented;**
 
