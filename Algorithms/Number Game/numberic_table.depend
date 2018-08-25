@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1534989497 source:c:\users\xavie\documents\aoc\numberic_table\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	<windows.h>
+
