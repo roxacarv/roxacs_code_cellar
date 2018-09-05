@@ -85,9 +85,9 @@ void print_in_order(Node * current)
 {
     if(current == NULL)
         return;
-    print_post_order(current->left);
+    print_in_order(current->left);
     printf("%d ", current->data);
-    print_post_order(current->right);
+    print_in_order(current->right);
 }
 
 void print_pre_order(Node * current)
@@ -95,8 +95,8 @@ void print_pre_order(Node * current)
     if(current == NULL)
         return;
     printf("%d ", current->data);
-    print_post_order(current->left);
-    print_post_order(current->right);
+    print_pre_order(current->left);
+    print_pre_order(current->right);
 }
 
 int main()
