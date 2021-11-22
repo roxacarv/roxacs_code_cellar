@@ -10,10 +10,10 @@ class Element(object):
 	def get_right(self):
 		return self.right
 
-	def add_element(self, element):
+	def add_element(self, element=None):
 		self.element = element
 
-	def add_right(self, right):
+	def add_right(self, right=None):
 		self.right = right
 
 class List(object):
@@ -25,10 +25,24 @@ class List(object):
 		self.array = None
 		self.initialize()
 
+	def __str__(self):
+		return self.show()
+
 	def initialize(self):
 		self.array = Element(element=None)
 
-	def push_start(self, element):
+	def get(self, index=0):
+		if index > self.size or index < 0:
+			return "Index out of range"
+		current = self.array
+		for i in range(self.size):
+			if i == index:
+				return current.get_element()
+				break
+			else:
+				current = current.get_right()
+
+	def push_start(self, element=None):
 		if self.array.get_element() == None:
 			self.array.add_element(element)
 			self.size += 1
@@ -47,7 +61,7 @@ class List(object):
 				temp_current = temp_current.get_right()
 			self.size += 1
 
-	def push_back(self, element):
+	def push_back(self, element=None):
 		if self.array.get_element() == None:
 			self.array.add_element(element)
 			self.size += 1
@@ -66,6 +80,8 @@ class List(object):
 					continue
 
 	def change_at(self, index=0, element=None):
+		if index > self.size or index < 0:
+			return "Index out of range"
 		current = self.array
 		for i in range(self.size):
 			if i == index:
@@ -87,7 +103,7 @@ class List(object):
 				self.size -= 1
 			current = current.get_right()
 
-	def __pop_at(self, index):
+	def __pop_at(self, index=0):
 		current = self.array
 		index_found = False
 		for i in range(self.size):
@@ -97,8 +113,6 @@ class List(object):
 				break
 			current = current.get_right()
 
-
-
 	def show(self):
 		current = self.array
 		string = "["
@@ -106,9 +120,7 @@ class List(object):
 			string += str(current.get_element()) + ", "
 			current = current.get_right()
 		fstring = string[:-2] + "]"
-		print(fstring)
-
-
+		return fstring
 
 arr = List()
 
@@ -119,44 +131,46 @@ arr.push_back(191)
 arr.push_back(23)
 arr.push_back(3)
 
-arr.show()
+print(arr)
 
 arr.change_at(index=1, element=22)
 
-arr.show()
+print(arr)
 
 arr.change_at(3, 1801)
 
-arr.show()
+print(arr)
 
 arr.pop(1)
 
-arr.show()
+print(arr)
 
 arr.pop(2)
 
-arr.show()
+print(arr)
 
 arr.pop()
 
-arr.show()
+print(arr)
 
 arr.push_start(88)
 
-arr.show()
+print(arr)
 
 arr.push_start(77)
 
-arr.show()
+print(arr)
 
 arr.push_back(15)
 
-arr.show()
+print(arr)
 
 arr.push_back(65)
 
-arr.show()
+print(arr)
 
 arr.push_start(1726)
 
-arr.show()
+print(arr)
+
+print(arr.get(2))
