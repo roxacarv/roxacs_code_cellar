@@ -17,12 +17,12 @@ Within time I'll be updating, correcting bugs and improving the codes as necessa
 * Validador de CPF/CNPJ (Terminado) - Implementado em JavaScript e C++
 * Binary Tree (WIP) - Implementing in C
 * Number Game (Finished) - Implemented in C
+* Linked List (Finished) - Implemented in Python
 
 **Next (planned) algorithms and projects to be implemented;**
 
 * Red-Black Tree
-* Linked List (NEXT ON LINE)
-* Hash Table
+* Hash Table (NEXT)
 * Consuming a WebService in Python
 * Snake Game (Console)
 * Various Calculators (eg. Cosine Calculator, Sine Calculator...)
